@@ -1,0 +1,70 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "All Rights Reserved"
+
+[[mods]]
+modId = "shtreimel_plus"
+version = "${version}"
+displayName = "Shtreimel Plus"
+authors = "CN-YiMin"
+description = '''Server-side Sable sub-level directory with an optional Xaero world-map overlay.'''
+
+[[mixins]]
+config = "shtreimel_plus.sable.mixins.json"
+
+[[mixins]]
+config = "shtreimel_plus.xaero.mixins.json"
+requiredMods = ["xaeroworldmap"]
+
+[[mixins]]
+config = "shtreimel_plus.mixins.json"
+requiredMods = ["create_aeronautics_toolgun"]
+
+[[dependencies.shtreimel_plus]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.1.219,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.shtreimel_plus]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.1]"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.shtreimel_plus]]
+modId = "sable"
+type = "required"
+versionRange = "[2.0.0,3.0.0)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.shtreimel_plus]]
+modId = "shtreimel"
+type = "optional"
+versionRange = "[0.7.0,)"
+ordering = "AFTER"
+side = "SERVER"
+
+[[dependencies.shtreimel_plus]]
+modId = "xaeroworldmap"
+type = "optional"
+versionRange = "[1.47.0,)"
+ordering = "AFTER"
+side = "CLIENT"
+
+[[dependencies.shtreimel_plus]]
+modId = "xaerominimap"
+type = "optional"
+versionRange = "[26.6.0,)"
+ordering = "AFTER"
+side = "CLIENT"
+
+[[dependencies.shtreimel_plus]]
+modId = "create_aeronautics_toolgun"
+type = "optional"
+versionRange = "[0.3.9,)"
+ordering = "AFTER"
+side = "CLIENT"

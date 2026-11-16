@@ -1,0 +1,13 @@
+artifact=shtreimel_plus-1.0.0.jar
+artifact_size=100539
+source=source.zip
+build_command=.\gradlew.bat clean test build
+java=21.0.10
+neoforge=21.1.248
+minecraft=1.21.1
+sable=2.0.6
+shtreimel_optional=0.7.0
+xaeroworldmap_optional=1.47.0
+xaerominimap_optional=26.6.0
+toolgun_optional=0.3.9
+notes=Final 1.0.0. Sable required; Shtreimel, Xaero and toolgun optional. Unloaded scan is UI-triggered only. Old pre-release backup kept as 1.0.0-rc1.

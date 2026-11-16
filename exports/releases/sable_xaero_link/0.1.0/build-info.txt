@@ -1,0 +1,13 @@
+artifact=sable_xaero_link-0.1.0.jar
+artifact_size=77833
+source=source.zip
+build_command=.\gradlew.bat clean test build
+java=21.0.10
+neoforge=21.1.248
+minecraft=1.21.1
+sable=2.0.6
+shtreimel=0.7.0
+xaeroworldmap=1.47.0
+xaerominimap=26.6.0
+toolgun=0.3.9
+note=Retroactive baseline snapshot; 0.1.1 was not a distinct build.

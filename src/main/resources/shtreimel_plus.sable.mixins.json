@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.sablexaerolink.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "SableStorageAccessors$Storage",
+    "SableStorageAccessors$File"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

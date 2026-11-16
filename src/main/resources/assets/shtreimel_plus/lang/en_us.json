@@ -1,0 +1,8 @@
+{
+  "shtreimel_plus.action.teleport": "Teleport to structure",
+  "shtreimel_plus.action.waypoint": "Create Xaero waypoint",
+  "shtreimel_plus.action.delete": "Delete structure",
+  "shtreimel_plus.action.share": "Share location",
+  "shtreimel_plus.action.toolgun": "Preview structure in toolgun",
+  "shtreimel_plus.action.freeze": "Freeze / unfreeze physics"
+}

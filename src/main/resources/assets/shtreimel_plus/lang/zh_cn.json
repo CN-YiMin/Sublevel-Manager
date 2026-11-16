@@ -1,0 +1,8 @@
+{
+  "shtreimel_plus.action.teleport": "传送到结构",
+  "shtreimel_plus.action.waypoint": "创建 Xaero 路径点",
+  "shtreimel_plus.action.delete": "删除结构",
+  "shtreimel_plus.action.share": "共享位置",
+  "shtreimel_plus.action.toolgun": "工具枪预览此结构",
+  "shtreimel_plus.action.freeze": "冻结/解冻物理"
+}

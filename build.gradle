@@ -1,0 +1,78 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev' version '2.0.141'
+}
+
+version = mod_version
+group = mod_group_id
+
+base {
+    archivesName = mod_id
+}
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+neoForge {
+    version = project.neo_version
+
+    parchment {
+        mappingsVersion = project.parchment_mappings_version
+        minecraftVersion = project.parchment_minecraft_version
+    }
+
+    runs {
+        client {
+            client()
+        }
+        server {
+            server()
+            programArgument '--nogui'
+        }
+    }
+
+    mods {
+        "${mod_id}" {
+            sourceSet(sourceSets.main)
+        }
+    }
+
+    unitTest {
+        testedMod = mods."${mod_id}"
+        enable()
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+processResources {
+    final Map<String, Object> properties = [version: project.version]
+    inputs.properties(properties)
+    filesMatching('META-INF/neoforge.mods.toml') {
+        expand(properties)
+    }
+}
+
+dependencies {
+    // Sable is required on both sides. It is installed as a normal local mod in dev.
+    implementation(files("libs/sable-neoforge-1.21.1-2.0.6.jar"))
+    compileOnly(files("libs/sable-companion-common-1.21.1-1.6.0.jar"))
+    compileOnly(files("libs/veil-neoforge-1.21.1-4.1.4.jar"))
+
+    // Server-side owner source. Optional at runtime; read through NBT fallback if absent.
+    compileOnly(files("libs/shtreimel-neoforge-1.21.1-0.7.0.jar"))
+
+    // Client-side map API. Never loaded on a dedicated server.
+    compileOnly(files("libs/xaeroworldmap-neoforge-1.21.1-1.47.0.jar"))
+    compileOnly(files("libs/xaerolib-neoforge-1.21.1-1.7.3.jar"))
+    compileOnly(files("libs/xaerominimap-neoforge-1.21.1-26.6.0.jar"))
+    compileOnly(files("libs/create_aeronautics_toolgun-0.3.9.jar"))
+
+    testImplementation("org.junit.jupiter:junit-jupiter:5.11.4")
+}
+
+tasks.named('test', Test).configure {
+    useJUnitPlatform()
+}
+
