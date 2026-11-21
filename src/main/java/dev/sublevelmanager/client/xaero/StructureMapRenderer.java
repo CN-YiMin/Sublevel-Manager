@@ -134,10 +134,6 @@ public final class StructureMapRenderer
                     : element.entry().name();
             graphics.drawString(font, Component.literal(owner + " · " + name),
                     (int) partialX + 14, (int) partialY - 4, 0xFFFFFFFF, true);
-            if (!element.entry().creatorId().isBlank()) {
-                graphics.drawString(font, Component.literal("创造者: " + element.entry().creatorLabel()),
-                        (int) partialX + 14, (int) partialY + 8, 0xFFB9A8FF, true);
-            }
         }
         return true;
     }

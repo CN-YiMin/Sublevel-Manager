@@ -136,7 +136,6 @@ public final class StructureDirectory {
                 return;
             }
             PlacementOwnerTracker.tryAssign(level, server);
-            StructureCreatorTracker.tryAssign(level, server);
             final StructureEntry entry = StructureScanner.describe(level, server);
             if (entry == null) {
                 return;

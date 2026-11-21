@@ -46,7 +46,6 @@ public final class StructureScanner {
             final Vec3 pos = new Vec3(logicalPosition.x, logicalPosition.y, logicalPosition.z);
             final CompoundTag userData = sub.getUserDataTag();
             final OwnerData owner = OwnerData.fromUserData(userData);
-            final CreatorData creator = CreatorData.fromUserData(userData);
             return new StructureEntry(
                     sub.getUniqueId(),
                     sub.getName() == null ? "" : sub.getName(),
@@ -57,9 +56,7 @@ public final class StructureScanner {
                     true,
                     chainId(sub),
                     owner.id(),
-                    owner.name(),
-                    creator.id(),
-                    creator.name());
+                    owner.name());
         } catch (final RuntimeException exception) {
             // One malformed or half-removed sub-level must not hide the rest.
             dev.sublevelmanager.SublevelManager.LOGGER.warn(
