@@ -151,6 +151,8 @@ public final class UnloadedStructureScanner {
                             final CompoundTag full = data.fullTag();
                             final OwnerData owner = OwnerData.fromUserData(
                                     full.getCompound("user_data"));
+                            final CreatorData creator = CreatorData.fromUserData(
+                                    full.getCompound("user_data"));
                             final String name = full.contains("display_name")
                                     ? full.getString("display_name")
                                     : "";
@@ -167,7 +169,9 @@ public final class UnloadedStructureScanner {
                                     false,
                                     "",
                                     owner.id(),
-                                    owner.name()));
+                                    owner.name(),
+                                    creator.id(),
+                                    creator.name()));
                         }
                     }
                 }

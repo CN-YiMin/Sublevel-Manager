@@ -17,7 +17,7 @@ import org.junit.jupiter.api.Test;
 class ProtocolCodecTest {
 
     private static StructureEntry entry(final UUID id, final boolean loaded, final double x) {
-        return new StructureEntry(id, "name", "minecraft:overworld", x, 64.0, 128.0, loaded, "", "00000000-0000-0000-0000-000000000001", "Alice");
+        return new StructureEntry(id, "name", "minecraft:overworld", x, 64.0, 128.0, loaded, "", "00000000-0000-0000-0000-000000000001", "Alice", "", "");
     }
 
     @Test
@@ -55,7 +55,7 @@ class ProtocolCodecTest {
         ClientStructureCache.accept(new StructureSnapshotPayload(List.of(first, second), true));
         assertEquals(2, ClientStructureCache.entries().size());
 
-        final StructureEntry moved = new StructureEntry(first.id(), first.name(), first.dimension(), 9.0, first.y(), first.z(), true, "", first.ownerId(), first.ownerName());
+        final StructureEntry moved = new StructureEntry(first.id(), first.name(), first.dimension(), 9.0, first.y(), first.z(), true, "", first.ownerId(), first.ownerName(), "", "");
         ClientStructureCache.applyDelta(new StructureDeltaPayload(List.of(moved), List.of(second.id())));
         assertEquals(1, ClientStructureCache.entries().size());
         assertEquals(9.0, ClientStructureCache.entries().getFirst().x());
@@ -68,7 +68,7 @@ class ProtocolCodecTest {
         ClientStructureCache.clear();
         ClientStructureCache.accept(new StructureSnapshotPayload(List.of(loaded, unloaded), true));
 
-        final StructureEntry moved = new StructureEntry(loaded.id(), loaded.name(), loaded.dimension(), 7.0, loaded.y(), loaded.z(), true, "", loaded.ownerId(), loaded.ownerName());
+        final StructureEntry moved = new StructureEntry(loaded.id(), loaded.name(), loaded.dimension(), 7.0, loaded.y(), loaded.z(), true, "", loaded.ownerId(), loaded.ownerName(), "", "");
         ClientStructureCache.accept(new StructureSnapshotPayload(List.of(moved), false));
 
         assertEquals(2, ClientStructureCache.entries().size());

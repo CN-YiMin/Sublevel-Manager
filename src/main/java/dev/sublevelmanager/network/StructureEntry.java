@@ -17,6 +17,8 @@ import net.minecraft.network.codec.StreamCodec;
  * @param chainId   stable id shared by rope/constraint-connected sub-levels; empty for unloaded
  * @param ownerId   owner UUID string, empty when unknown
  * @param ownerName owner display name, empty when unknown
+ * @param creatorId creator UUID string, empty when unknown
+ * @param creatorName creator display name, empty when unknown
  */
 public record StructureEntry(
         UUID id,
@@ -28,7 +30,9 @@ public record StructureEntry(
         boolean loaded,
         String chainId,
         String ownerId,
-        String ownerName) {
+        String ownerName,
+        String creatorId,
+        String creatorName) {
 
     public static final StreamCodec<RegistryFriendlyByteBuf, StructureEntry> STREAM_CODEC =
             StreamCodec.of(
@@ -43,6 +47,8 @@ public record StructureEntry(
                         buffer.writeUtf(entry.chainId());
                         buffer.writeUtf(entry.ownerId());
                         buffer.writeUtf(entry.ownerName());
+                        buffer.writeUtf(entry.creatorId());
+                        buffer.writeUtf(entry.creatorName());
                     },
                     buffer -> new StructureEntry(
                             buffer.readUUID(),
@@ -54,6 +60,8 @@ public record StructureEntry(
                             buffer.readBoolean(),
                             buffer.readUtf(),
                             buffer.readUtf(),
+                            buffer.readUtf(),
+                            buffer.readUtf(),
                             buffer.readUtf()));
 
     public String ownerLabel() {
@@ -62,6 +70,16 @@ public record StructureEntry(
         }
         if (!ownerId.isBlank()) {
             return ownerId;
+        }
+        return "未知";
+    }
+
+    public String creatorLabel() {
+        if (!creatorName.isBlank()) {
+            return creatorName;
+        }
+        if (!creatorId.isBlank()) {
+            return creatorId;
         }
         return "未知";
     }

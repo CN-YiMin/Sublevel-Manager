@@ -6,7 +6,7 @@ Sublevel Manager 不依赖任何外部 owner/冻结模组，也不包含相关�
 
 ## 当前状态
 
-**2.0.0 — 独立版，等待真实客户端/服务端联调。**
+**2.1.0 — 独立版，等待真实客户端/服务端联调。**
 
 ## 已实现
 
@@ -27,6 +27,12 @@ Sublevel Manager 不依赖任何外部 owner/冻结模组，也不包含相关�
   - `user_data.sublevel_manager.ownerName`
   - 缺失时显示未知
   - 由本模组在玩家放置结构时尽力补记
+- 独立 creator 追踪
+  - `user_data.sublevel_manager.creator`
+  - `user_data.sublevel_manager.creatorName`
+  - `user_data.sublevel_manager.createdAt`
+  - 由单独的 `StructureCreatorTracker` 写入，和 owner 分离
+  - 只追踪玩家放置产生的新结构；世界生成结构显示未知
 - 快照与增量同步
   - 所有玩家都可订阅查看目录
   - 传送/删除要求 OP（权限等级 2）
@@ -65,7 +71,7 @@ Sublevel Manager 不依赖任何外部 owner/冻结模组，也不包含相关�
   - 已加载：青色
   - 未加载：灰色
   - 菱形加大并带深色外框，悬停范围同步扩大
-  - 悬停：黄色 + owner · 名称
+  - 悬停：黄色 + owner · 名称，creator 已知时额外显示创造者
 - 世界地图右侧 `S` 按钮
   - 打开配置界面
   - 第一项：显示物理结构叠加层 开/关
@@ -140,10 +146,10 @@ $env:JAVA_HOME='C:\Program Files\Java\jdk-21.0.10'
 产物：
 
 ```text
-build\libs\sublevel_manager-2.0.0.jar
-SHA256 E44E5360B631D53F66719B8CBE92D66DC5A787E4DEDAD7169DF2D6FEEAF601F1
+build\libs\sublevel_manager-2.1.0.jar
+SHA256 AF220299D31797126300B17A385D5F57DE373E859207E604BE8B06B12EB697BB
 
-版本留痕目录：`exports/releases/sublevel_manager/2.0.0/`
+版本留痕目录：`exports/releases/sublevel_manager/2.1.0/`
 ```
 
 ## 性能

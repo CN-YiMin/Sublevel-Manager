@@ -26,11 +26,13 @@ public final class ServerEvents {
     @SubscribeEvent
     public static void onRightClickBlock(final PlayerInteractEvent.RightClickBlock event) {
         PlacementOwnerTracker.onRightClickBlock(event);
+        StructureCreatorTracker.onRightClickBlock(event);
     }
 
     @SubscribeEvent
     public static void onRightClickItem(final PlayerInteractEvent.RightClickItem event) {
         PlacementOwnerTracker.onRightClickItem(event);
+        StructureCreatorTracker.onRightClickItem(event);
     }
 
     @SubscribeEvent
@@ -55,6 +57,7 @@ public final class ServerEvents {
     @SubscribeEvent
     public static void onServerStopped(final ServerStoppedEvent event) {
         PlacementOwnerTracker.reset();
+        StructureCreatorTracker.reset();
         StructureDirectory.detachAll();
     }
 
