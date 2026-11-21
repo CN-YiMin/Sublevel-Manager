@@ -3,66 +3,59 @@ loaderVersion = "[4,)"
 license = "All Rights Reserved"
 
 [[mods]]
-modId = "shtreimel_plus"
+modId = "sublevel_manager"
 version = "${version}"
-displayName = "Shtreimel Plus"
+displayName = "Sublevel Manager"
 authors = "CN-YiMin"
 description = '''Server-side Sable sub-level directory with an optional Xaero world-map overlay.'''
 
 [[mixins]]
-config = "shtreimel_plus.sable.mixins.json"
+config = "sublevel_manager.sable.mixins.json"
 
 [[mixins]]
-config = "shtreimel_plus.xaero.mixins.json"
+config = "sublevel_manager.xaero.mixins.json"
 requiredMods = ["xaeroworldmap"]
 
 [[mixins]]
-config = "shtreimel_plus.mixins.json"
+config = "sublevel_manager.mixins.json"
 requiredMods = ["create_aeronautics_toolgun"]
 
-[[dependencies.shtreimel_plus]]
+[[dependencies.sublevel_manager]]
 modId = "neoforge"
 type = "required"
 versionRange = "[21.1.219,)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.shtreimel_plus]]
+[[dependencies.sublevel_manager]]
 modId = "minecraft"
 type = "required"
 versionRange = "[1.21.1]"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.shtreimel_plus]]
+[[dependencies.sublevel_manager]]
 modId = "sable"
 type = "required"
 versionRange = "[2.0.0,3.0.0)"
 ordering = "AFTER"
 side = "BOTH"
 
-[[dependencies.shtreimel_plus]]
-modId = "shtreimel"
-type = "optional"
-versionRange = "[0.7.0,)"
-ordering = "AFTER"
-side = "SERVER"
-
-[[dependencies.shtreimel_plus]]
+[[dependencies.sublevel_manager]]
 modId = "xaeroworldmap"
 type = "optional"
 versionRange = "[1.47.0,)"
 ordering = "AFTER"
 side = "CLIENT"
 
-[[dependencies.shtreimel_plus]]
+[[dependencies.sublevel_manager]]
 modId = "xaerominimap"
 type = "optional"
 versionRange = "[26.6.0,)"
 ordering = "AFTER"
 side = "CLIENT"
 
-[[dependencies.shtreimel_plus]]
+[[dependencies.sublevel_manager]]
 modId = "create_aeronautics_toolgun"
 type = "optional"
 versionRange = "[0.3.9,)"

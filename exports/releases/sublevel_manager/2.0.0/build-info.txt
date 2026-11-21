@@ -1,0 +1,13 @@
+artifact=sublevel_manager-2.0.0.jar
+artifact_size=97988
+source=source.zip
+build_command=.\gradlew.bat clean test build
+java=21.0.10
+neoforge=21.1.248
+minecraft=1.21.1
+sable=2.0.6
+xaeroworldmap_optional=1.47.0
+xaerominimap_optional=26.6.0
+toolgun_optional=0.3.9
+network_channels=optional
+notes=Standalone Sublevel Manager. Owner tags use user_data.sublevel_manager.*.

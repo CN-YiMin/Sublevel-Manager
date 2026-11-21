@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.sublevelmanager.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "ToolModeScreenAccessor"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

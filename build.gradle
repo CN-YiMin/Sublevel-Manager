@@ -60,9 +60,6 @@ dependencies {
     compileOnly(files("libs/sable-companion-common-1.21.1-1.6.0.jar"))
     compileOnly(files("libs/veil-neoforge-1.21.1-4.1.4.jar"))
 
-    // Server-side owner source. Optional at runtime; read through NBT fallback if absent.
-    compileOnly(files("libs/shtreimel-neoforge-1.21.1-0.7.0.jar"))
-
     // Client-side map API. Never loaded on a dedicated server.
     compileOnly(files("libs/xaeroworldmap-neoforge-1.21.1-1.47.0.jar"))
     compileOnly(files("libs/xaerolib-neoforge-1.21.1-1.7.3.jar"))

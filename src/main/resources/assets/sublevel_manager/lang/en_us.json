@@ -1,0 +1,7 @@
+{
+  "sublevel_manager.action.teleport": "Teleport to structure",
+  "sublevel_manager.action.waypoint": "Create Xaero waypoint",
+  "sublevel_manager.action.delete": "Delete structure",
+  "sublevel_manager.action.share": "Share location",
+  "sublevel_manager.action.toolgun": "Preview structure in toolgun"
+}

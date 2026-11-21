@@ -1,0 +1,7 @@
+{
+  "sublevel_manager.action.teleport": "传送到结构",
+  "sublevel_manager.action.waypoint": "创建 Xaero 路径点",
+  "sublevel_manager.action.delete": "删除结构",
+  "sublevel_manager.action.share": "共享位置",
+  "sublevel_manager.action.toolgun": "工具枪预览此结构"
+}
