@@ -6,7 +6,7 @@ Sublevel Manager 不依赖任何外部 owner/冻结模组，也不包含相关�
 
 ## 当前状态
 
-**2.2.0 — 归主账本阶段，等待真实客户端/服务端联调。**
+**2.2.1 — 归主账本与适配器阶段，等待真实客户端/服务端联调。**
 
 ## 已实现
 
@@ -144,10 +144,10 @@ $env:JAVA_HOME='C:\Program Files\Java\jdk-21.0.10'
 产物：
 
 ```text
-build\libs\sublevel_manager-2.2.0.jar
-SHA256 1F4ECE020241397A3E37ABE8166FDC3D38096FCE61932E54D72B756501BA147C
+build\libs\sublevel_manager-2.2.1.jar
+SHA256 2EFA15283817424B12C88E9F32F1F9B42D574A51E7C8D74A568D17FBF8C3EE08
 
-版本留痕目录：`exports/releases/sublevel_manager/2.2.0/`
+版本留痕目录：`exports/releases/sublevel_manager/2.2.1/`
 ```
 
 ## 性能

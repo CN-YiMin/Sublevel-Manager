@@ -1,0 +1,10 @@
+artifact=sublevel_manager-2.2.1.jar
+artifact_size=124320
+source=source.zip
+build_command=.\gradlew.bat clean test build
+java=21.0.10
+neoforge=21.1.248
+minecraft=1.21.1
+sable=2.0.6
+network_channels=optional
+notes=Adds Toolgun weld/disconnect and Sable assembler ownership adapters on top of the 2.2.0 ledger.

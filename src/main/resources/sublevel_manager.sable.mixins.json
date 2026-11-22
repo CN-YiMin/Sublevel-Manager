@@ -5,7 +5,8 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "SableStorageAccessors$Storage",
-    "SableStorageAccessors$File"
+    "SableStorageAccessors$File",
+    "SableAssemblyPlacementMixin"
   ],
   "injectors": {
     "defaultRequire": 1

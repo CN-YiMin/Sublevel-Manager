@@ -56,6 +56,20 @@ public final class PlacementIntentRegistry {
         return Optional.ofNullable(best);
     }
 
+    public static Optional<Intent> findLatest(final ServerLevel level) {
+        final long now = System.currentTimeMillis();
+        Intent best = null;
+        for (final Intent intent : INTENTS.values()) {
+            if (!intent.dimension().equals(level.dimension()) || now - intent.time() > MAX_AGE_MS) {
+                continue;
+            }
+            if (best == null || intent.time() > best.time()) {
+                best = intent;
+            }
+        }
+        return Optional.ofNullable(best);
+    }
+
     public static void remove(final UUID playerId) {
         INTENTS.remove(playerId);
     }
