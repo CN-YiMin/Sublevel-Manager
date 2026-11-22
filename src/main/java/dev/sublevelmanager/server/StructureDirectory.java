@@ -135,7 +135,7 @@ public final class StructureDirectory {
                     || server.isRemoved()) {
                 return;
             }
-            PlacementOwnerTracker.tryAssign(level, server);
+            StructureOwnershipService.onSubLevelAdded(level, server);
             final StructureEntry entry = StructureScanner.describe(level, server);
             if (entry == null) {
                 return;
@@ -149,6 +149,7 @@ public final class StructureDirectory {
             if (!(sub instanceof ServerSubLevel server)) {
                 return;
             }
+            StructureOwnershipService.onSubLevelRemoved(server.getUniqueId());
             if (LAST_SENT.remove(server.getUniqueId()) == null) {
                 return;
             }
@@ -314,6 +315,7 @@ public final class StructureDirectory {
             } else if (payload.action() == StructureActionPayload.Action.DELETE
                     && UnloadedStructureScanner.delete(player.server, payload.id())) {
                 LAST_SENT.remove(payload.id());
+                StructureOwnershipService.onSubLevelRemoved(payload.id());
                 UNLOADED_CACHE.removeIf(entry -> entry.id().equals(payload.id()));
                 broadcastRemoved(player.server, List.of(payload.id()));
                 refreshAll(player.server);
@@ -371,6 +373,7 @@ public final class StructureDirectory {
                 removedIds.addAll(deleteConnected(found));
             } else if (UnloadedStructureScanner.delete(player.server, id)) {
                 removedIds.add(id);
+                StructureOwnershipService.onSubLevelRemoved(id);
                 UNLOADED_CACHE.removeIf(entry -> entry.id().equals(id));
             }
         }

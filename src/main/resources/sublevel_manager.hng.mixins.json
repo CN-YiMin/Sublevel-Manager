@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.sublevelmanager.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "HngShipPlacementMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

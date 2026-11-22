@@ -65,6 +65,8 @@ dependencies {
     compileOnly(files("libs/xaerolib-neoforge-1.21.1-1.7.3.jar"))
     compileOnly(files("libs/xaerominimap-neoforge-1.21.1-26.6.0.jar"))
     compileOnly(files("libs/create_aeronautics_toolgun-0.3.9.jar"))
+    // Optional placement adapters; never bundled or required at runtime.
+    compileOnly(files("libs/hello_new_journautics_core-2.0.0-preview.jar"))
 
     testImplementation("org.junit.jupiter:junit-jupiter:5.11.4")
 }

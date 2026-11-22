@@ -6,7 +6,7 @@ Sublevel Manager 不依赖任何外部 owner/冻结模组，也不包含相关�
 
 ## 当前状态
 
-**2.0.0 — 独立版，等待真实客户端/服务端联调。**
+**2.2.0 — 归主账本阶段，等待真实客户端/服务端联调。**
 
 ## 已实现
 
@@ -22,6 +22,10 @@ Sublevel Manager 不依赖任何外部 owner/冻结模组，也不包含相关�
   - 复用 Sable `SubLevelStorage` / `SubLevelData`
   - 不加载结构本体
   - 初次订阅/普通快照/删除后不读取 region 文件
+- 统一归主账本
+  - `world/sublevel_manager/ownership.json`
+  - placementId、owner、来源、blueprint、子结构列表
+  - 异步去抖写入，删除结构时移除
 - 独立 owner 标签
   - `user_data.sublevel_manager.owner`
   - `user_data.sublevel_manager.ownerName`
@@ -140,10 +144,10 @@ $env:JAVA_HOME='C:\Program Files\Java\jdk-21.0.10'
 产物：
 
 ```text
-build\libs\sublevel_manager-2.0.0.jar
-SHA256 E44E5360B631D53F66719B8CBE92D66DC5A787E4DEDAD7169DF2D6FEEAF601F1
+build\libs\sublevel_manager-2.2.0.jar
+SHA256 1F4ECE020241397A3E37ABE8166FDC3D38096FCE61932E54D72B756501BA147C
 
-版本留痕目录：`exports/releases/sublevel_manager/2.0.0/`
+版本留痕目录：`exports/releases/sublevel_manager/2.2.0/`
 ```
 
 ## 性能

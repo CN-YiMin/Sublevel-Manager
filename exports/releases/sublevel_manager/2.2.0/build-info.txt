@@ -1,0 +1,10 @@
+artifact=sublevel_manager-2.2.0.jar
+artifact_size=118600
+source=source.zip
+build_command=.\gradlew.bat clean test build
+java=21.0.10
+neoforge=21.1.248
+minecraft=1.21.1
+sable=2.0.6
+network_channels=optional
+notes=Unified placement ownership with JSON ledger. HNG/Sable Schematic/Toolgun placement adapters included; welding/splitting adapters pending next stage.

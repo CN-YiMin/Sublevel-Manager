@@ -20,6 +20,18 @@ requiredMods = ["xaeroworldmap"]
 config = "sublevel_manager.mixins.json"
 requiredMods = ["create_aeronautics_toolgun"]
 
+[[mixins]]
+config = "sublevel_manager.hng.mixins.json"
+requiredMods = ["hello_new_journautics_core"]
+
+[[mixins]]
+config = "sublevel_manager.sable_schematic.mixins.json"
+requiredMods = ["sable_schematic_api"]
+
+[[mixins]]
+config = "sublevel_manager.toolgun_ownership.mixins.json"
+requiredMods = ["create_aeronautics_toolgun"]
+
 [[dependencies.sublevel_manager]]
 modId = "neoforge"
 type = "required"

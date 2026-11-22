@@ -25,12 +25,12 @@ public final class ServerEvents {
 
     @SubscribeEvent
     public static void onRightClickBlock(final PlayerInteractEvent.RightClickBlock event) {
-        PlacementOwnerTracker.onRightClickBlock(event);
+        PlacementIntentRegistry.onRightClickBlock(event);
     }
 
     @SubscribeEvent
     public static void onRightClickItem(final PlayerInteractEvent.RightClickItem event) {
-        PlacementOwnerTracker.onRightClickItem(event);
+        PlacementIntentRegistry.onRightClickItem(event);
     }
 
     @SubscribeEvent
@@ -43,6 +43,7 @@ public final class ServerEvents {
 
     @SubscribeEvent
     public static void onServerStarted(final ServerStartedEvent event) {
+        StructureOwnershipService.initialize(event.getServer());
         for (final ServerLevel level : event.getServer().getAllLevels()) {
             final ServerSubLevelContainer container =
                     dev.ryanhcode.sable.api.sublevel.SubLevelContainer.getContainer(level);
@@ -54,7 +55,7 @@ public final class ServerEvents {
 
     @SubscribeEvent
     public static void onServerStopped(final ServerStoppedEvent event) {
-        PlacementOwnerTracker.reset();
+        StructureOwnershipService.shutdown();
         StructureDirectory.detachAll();
     }
 
@@ -62,6 +63,7 @@ public final class ServerEvents {
     public static void onLogout(final PlayerEvent.PlayerLoggedOutEvent event) {
         if (event.getEntity() instanceof net.minecraft.server.level.ServerPlayer player) {
             StructureDirectory.remove(player);
+            PlacementIntentRegistry.remove(player.getUUID());
         }
     }
 }

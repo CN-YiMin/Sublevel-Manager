@@ -151,6 +151,7 @@ public final class UnloadedStructureScanner {
                             final CompoundTag full = data.fullTag();
                             final OwnerData owner = OwnerData.fromUserData(
                                     full.getCompound("user_data"));
+                            StructureOwnershipService.recordExisting(data.uuid(), owner);
                             final String name = full.contains("display_name")
                                     ? full.getString("display_name")
                                     : "";
